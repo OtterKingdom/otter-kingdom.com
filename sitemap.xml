@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://otter-kingdom.com/blog/</loc>
+    <lastmod>2021-11-29T10:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otter-kingdom.com/</loc>
+    <lastmod>2021-11-29T10:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otter-kingdom.com/blog/website-launch/</loc>
+    <lastmod>2021-11-29T10:40:32+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://otter-kingdom.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://otter-kingdom.com/tags/</loc>
+  </url>
+  
+</urlset>
