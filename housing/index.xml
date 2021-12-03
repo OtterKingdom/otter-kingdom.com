@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Housing on Otter Kingdom</title>
+    <link>https://otter-kingdom.com/housing/</link>
+    <description>Recent content in Housing on Otter Kingdom</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2021 Otter Kingdom</copyright>
+    <lastBuildDate>Fri, 03 Dec 2021 15:35:13 +0100</lastBuildDate>
+    
+	<atom:link href="https://otter-kingdom.com/housing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

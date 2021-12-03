@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Otter Kingdom</title>
-    <link>https://otter-kingdom.com/</link>
-    <description>Recent content on Otter Kingdom</description>
+    <title>Salmon Bay on Otter Kingdom</title>
+    <link>https://otter-kingdom.com/housing/salmonbay/</link>
+    <description>Recent content in Salmon Bay on Otter Kingdom</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright &amp;copy; 2021 Otter Kingdom</copyright>
     <lastBuildDate>Fri, 03 Dec 2021 15:35:13 +0100</lastBuildDate>
     
-	<atom:link href="https://otter-kingdom.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://otter-kingdom.com/housing/salmonbay/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -55,15 +55,6 @@
       
       <guid>https://otter-kingdom.com/housing/salmonbay/center-05/</guid>
       <description>A cozy home located in the center of Salmon Bay right next to the entrance of the market and very close to the town&amp;rsquo;s pond.</description>
-    </item>
-    
-    <item>
-      <title>Economy</title>
-      <link>https://otter-kingdom.com/game/economy/</link>
-      <pubDate>Fri, 03 Dec 2021 15:35:13 +0100</pubDate>
-      
-      <guid>https://otter-kingdom.com/game/economy/</guid>
-      <description>Currency The in-game currency will be hosted on a blockchain based on Polygon to allow fast and inexpensive transfers.</description>
     </item>
     
     <item>
@@ -190,15 +181,6 @@
       
       <guid>https://otter-kingdom.com/housing/salmonbay/fight-02/</guid>
       <description>This great house is located in one of the most busy part of the town: the training grounds.</description>
-    </item>
-    
-    <item>
-      <title>Website Launch</title>
-      <link>https://otter-kingdom.com/blog/website-launch/</link>
-      <pubDate>Mon, 29 Nov 2021 10:40:32 +0100</pubDate>
-      
-      <guid>https://otter-kingdom.com/blog/website-launch/</guid>
-      <description>Website is live! Our website is now live, while it may not contain much at the moment, we hope to share new information with you as often as possible!</description>
     </item>
     
   </channel>
