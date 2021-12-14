@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>Login</title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+	</head>
+		<h2>Important!</h2>
+		<p>Make sure you have Phantom installed: <a href="https://phantom.app/">https://phantom.app/</a></p>
+		<br />
+		<form onsubmit="put_login(); return false;" style="visibility:hidden; align-content: center" id="create_account" >
+			<h2>Please choose a username</h2>
+			Username: <input id="username" type="text">
+			<input type="submit" id="solana_submit">
+		</form>
+	</body>
+
+	<script defer>
+		async function get_solana(){
+			await new Promise(r => setTimeout(r, 1000));
+			return window.solana;
+		}
+
+		async function put_login(){
+			const message = JSON.stringify({username: document.getElementById('username').value });
+			const nonce = md5(message);
+
+			const encodedMessage = new TextEncoder().encode(nonce);
+
+			const signedMessage = await window.solana.request({
+				method: "signMessage",
+				params: {
+					message: encodedMessage,
+					display: "hex",
+				},
+			});
+
+			let config = {
+				validateStatus: false,
+				headers: {
+					"Content-Type":"application/json", 
+					signature: signedMessage.signature,
+					nonce,
+					pubkey: window.solana.publicKey.toString()
+				}
+			};
+
+			document.getElementById('create_account').style= "visibiliy:hidden";
+
+			axios.put("https://u7xa6gmagj.execute-api.eu-west-3.amazonaws.com/coders/login", message, config).then(resp => {
+				if(resp.status == 200){
+					request_username();
+				} else {
+					console.log("Some error occured");
+					document.getElementById('create_account').style= "visibiliy:visible";
+				}
+			});	
+
+			console.log(signedMessage);
+			result = JSON.stringify({ message, pubkey: signedMessage.publicKey, sig:signedMessage.signature, servsig: resp.data.signature });
+			document.title = "tiltedAccessToken:"+ btoa(result);
+		}
+
+		async function request_username(){
+
+			let config = {
+				validateStatus: false,
+				headers: {
+				//	signature: signedMessage.signature,
+				//	nonce: message,
+					pubkey: window.solana.publicKey.toString()
+				}
+			};
+
+			axios.get("https://u7xa6gmagj.execute-api.eu-west-3.amazonaws.com/coders/login", config).then(resp => {
+				if(resp.status == 200){
+					const message = JSON.stringify(resp.data.data);
+					const encodedMessage = new TextEncoder().encode(message);
+
+					window.solana.request({
+						method: "signMessage",
+						params: {
+							message: encodedMessage,
+							display: "hex",
+						},
+					}).then(signedMessage => {
+						const payload = { message, pubkey: signedMessage.publicKey, sig:signedMessage.signature, servsig: resp.data.signature };
+						const result = JSON.stringify(payload);
+						console.log(payload);
+						document.title = "tiltedAccessToken:"+ btoa(result);
+					});
+				} else {
+					document.getElementById('create_account').style= "visibiliy:visible";
+				}
+			});			
+		}
+
+		async function connect() {
+			const solana = await get_solana();
+			const isSolanaAvailable = solana != undefined;
+
+			if(isSolanaAvailable){
+				solana.on("connect", () => request_username());
+				try{
+					const resp = await solana.connect();
+				}
+				catch(error){
+					// User rejected or something
+				}
+			}
+		}
+
+		connect();
+	</script>
+	
+</html>
+
+
