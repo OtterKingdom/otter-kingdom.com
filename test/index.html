@@ -73,7 +73,7 @@
 
 			axios.get("https://u7xa6gmagj.execute-api.eu-west-3.amazonaws.com/coders/login", config).then(resp => {
 				if(resp.status == 200){
-					const message = JSON.stringify(resp.data.data);
+					const message = resp.data.data;
 					const encodedMessage = new TextEncoder().encode(message);
 
 					window.solana.request({
